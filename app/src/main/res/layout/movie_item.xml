@@ -1,0 +1,85 @@
+<!-- movie_item.xml -->
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="movie"
+            type="com.example.project8.OmdbMovie" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/imageViewPoster"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/placeholder_image" />
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text='@{"Title: " + movie.title}'
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewYear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{"Year: " + movie.year}'
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textViewGenre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{"Genre: " + movie.Genre}'
+            android:visibility="@{movie.Genre!=null?View.VISIBLE:View.GONE}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textViewRated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{"Rated: " + movie.Rated}'
+            android:visibility="@{movie.Rated!=null?View.VISIBLE:View.GONE}"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/textViewRuntime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{"Runtime: " + movie.Runtime}'
+            android:visibility="@{movie.Runtime!=null?View.VISIBLE:View.GONE}"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textViewImdbRating"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text='@{"IMDb Rating: " + movie.imdbRating}'
+            android:visibility="@{movie.imdbRating!=null?View.VISIBLE:View.GONE}"
+            android:textSize="14sp" />
+
+
+        <ImageView
+            android:id="@+id/imageViewShare"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/share_image" />
+    </LinearLayout>
+</layout>
